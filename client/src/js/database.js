@@ -16,18 +16,16 @@ const initdb = async () => {
   });
 };
 
-// TODO: Complete the postDb() function below:
 export const postDb = async (name, home, cell, email) => {
   console.log("post to base");
   const contactsDB = await openDB("contacts", 1);
   const tx = contactsDB.transaction("contacts", "readwrite");
   const store = tx.objectStore("contacts");
-  const request = store.add({ name: name, home: home, cell: cell, email: email });
+  const request = store.add({ name: name, home_phone: home, cell_phone: cell, email: email });
   const result = await request;
   console.log("Data saved to DB", result);
 };
 
-// TODO: Complete the getDb() function below:
 export const getDb = async () => {
   const contactsDB = await openDB("contacts", 1);
   const tx = contactsDB.transaction("contacts", "readonly");
@@ -38,7 +36,6 @@ export const getDb = async () => {
   return result;
 };
 
-// TODO: Complete the deleteDb() function below:
 export const deleteDb = async (id) => {
   const contactsDB = await openDB("contacts", 1);
   const tx = contactsDB.transaction("contacts", "readwrite");

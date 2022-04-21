@@ -9,9 +9,8 @@ module.exports = () => {
       cards: "./src/js/cards.js",
     },
 
-    // TODO: Add the correct output
     output: {
-      filename: "bundle.js",
+      filename: "[name].bundle.js",
       path: path.resolve(__dirname, "dist"),
     },
 
