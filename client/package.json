@@ -7,10 +7,8 @@
   },
   "author": "2U",
   "license": "UNLICENSED",
-  "devDependencies": {
-    
-  },
+  "devDependencies": {},
   "dependencies": {
-   
+    "idb": "^6.1.2"
   }
 }
